@@ -1,0 +1,36 @@
+@import "../../../styles";
+
+h1 {
+    @include basic-styles;
+    @include display-flex;
+    font-size: $medium;
+    font-family: $awesome-font;
+    margin-bottom: 1em;
+}
+
+h3 {
+    @include display-flex;
+    font-size: $small;
+    font-family: $awesome-font;
+    margin-bottom: 5em;
+}
+
+.worker-list-div{
+    background-color:purple;
+}
+
+.cards {
+  margin: 5em;
+}
+
+@include tablet {
+    .cards{
+       @include display-grid-tab;
+    }
+}
+
+@include desktop {
+    .cards{
+       @include display-grid;
+    }
+}

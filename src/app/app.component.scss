@@ -1,0 +1,13 @@
+@import '../styles';
+
+* {
+    @include basic-styles;
+}
+  
+h1 {
+    @include display-flex;
+    color: $primary-text;
+    font-size: $medium;
+    padding: $medium;
+    font-family:$awesome-font;
+}

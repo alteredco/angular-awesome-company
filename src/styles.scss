@@ -1,1 +1,89 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import url("https://fonts.googleapis.com/css?family=Anton&family=Oswald");
+
+// colors
+$primary-color: rgb(49, 0, 128);
+$primary-bg: rgb(236, 239, 241);
+$primary-text: #0b0b0b;
+
+//font styles
+$awesome-font: "Anton";
+$sans-serif: "Roboto", Helvetica, Verdana, sans-serif;
+$serif: Merriweather, Georgia, "Times New Roman", serif;
+$mono: "Source Code Pro", Courier, mono;
+
+$light: 300;
+$normal: 400;
+$semibold: 500;
+$bold: 700;
+
+$large: 3em;
+$medium: 2em;
+$small: 1em;
+
+//media queries
+$tablet-width: 768px;
+$desktop-width: 1024px;
+
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+
+//basic styles mixin
+@mixin basic-styles {
+  box-sizing: border-box;
+  background-color: $primary-bg;
+  color: $primary-color;
+  font-family: $sans-serif;
+  font-size: $medium;
+}
+
+@mixin display-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+// grid mixins
+@mixin display-grid {
+  display: -ms-grid;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 4em;
+  row-gap: 4em;
+  margin: 0 auto;
+  max-width: 64em;
+  padding: 0;
+}
+
+@mixin display-grid-tab {
+  display: -ms-grid;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1em;
+  row-gap: 1em;
+  margin: 0 auto;
+  max-width: 44em;
+  padding: 0;
+}
+
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
