@@ -1,5 +1,4 @@
 @import '../styles';
-
 * {
     @include basic-styles;
 }
@@ -10,4 +9,5 @@ h1 {
     font-size: $medium;
     padding: $medium;
     font-family:$awesome-font;
+    line-height: normal;
 }

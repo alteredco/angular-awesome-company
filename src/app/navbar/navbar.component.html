@@ -2,11 +2,12 @@
     <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
         [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
         [mode]="(isHandset$ | async) ? 'over' : 'side'"
-        [opened]="!(isHandset$ | async)">
-      <mat-toolbar>Menu</mat-toolbar>
-      <mat-nav-list>
-        <a mat-list-item href="#">Workers</a>
-        <a mat-list-item href="#">About</a>
+        [opened]="(isHandset$ | async)">
+      <mat-toolbar class="menu-title">Menu</mat-toolbar>
+      <mat-nav-list class="menu-items">
+        <a mat-list-item href="/workers" (click)="drawer.toggle()">Workers</a>
+        <a mat-list-item href="/about" (click)="drawer.toggle()">About</a>
+        <p mat-list-item (click)="drawer.toggle()">x</p>
       </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>
@@ -21,13 +22,13 @@
         <mat-icon>menu</mat-icon>
       </button>
       <span class="spacer"></span>
-      <div>
-        <a mat-button [routerLink]="'/workers'"> Workers </a>
-        <a mat-button [routerLink]="'/about'"> About </a>
+      <div class="nav-links">
+        <a mat-button [routerLink]="'/workers'" (click)="drawer.toggle()"> Workers </a>
+        <a mat-button [routerLink]="'/about'" (click)="drawer.toggle()"> About </a>
       </div>
     </mat-toolbar-row>
     <mat-toolbar-row class="title-bar">
-        <span>{{ title }}</span>
+        <span (click)="openSnackBar()">{{ title }}</span>
     </mat-toolbar-row>
     </mat-toolbar>
 </mat-sidenav-content>

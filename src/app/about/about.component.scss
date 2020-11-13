@@ -3,3 +3,23 @@
 *{
     @include display-flex;
 }
+
+.small-box, .large-box {
+    margin: 16px;
+    padding: 16px;
+    border-radius: 8px;
+    line-height: normal;
+  }
+  
+  .small-box {
+    height: auto;
+    width: 80vw;
+    font-size: $small;
+  }
+  
+  .large-box {
+      text-align: center;
+    height: auto;
+    width: 80vw;
+    font-size: $small;
+  }

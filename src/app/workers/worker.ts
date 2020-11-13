@@ -17,13 +17,13 @@ interface Picture{
 
 interface Results {
  gender: string;
- name?: Name[];
- id?: Id[];
- picture?: Picture[];
+ name: Name[];
+ id: Id[];
+ picture: Picture[];
  nat:string;
 }
 
 export interface Worker {
-    results?: Results[];
+    results: Results[];
 }
 

@@ -1,8 +1,4 @@
 import { Component } from '@angular/core';
-import {WorkerService} from './workers/worker.service';
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { Observable } from 'rxjs';
-import { map, shareReplay } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -11,13 +7,4 @@ import { map, shareReplay } from 'rxjs/operators';
 })
 export class AppComponent {
   title = 'Awesome Startup Ltd.';
-  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
-  .pipe(
-    map(result => result.matches),
-    shareReplay()
-  );
-
-
-
-constructor(private breakpointObserver: BreakpointObserver) {}
 }

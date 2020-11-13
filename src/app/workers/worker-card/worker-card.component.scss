@@ -2,9 +2,21 @@
 
 .worker-card {
   max-width: 400px;
+  @include grow(1.1);
 }
 
 .header-image {
   background-image: url("https://randomuser.me/api/portraits/thumb/lego/9.jpg");
   background-size: cover;
 }
+
+button {
+    @include grow(1.1);
+}
+
+.invite {
+    @include display-flex;
+    list-style-type: none;
+    font-size: $small;
+}
+

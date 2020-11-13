@@ -15,7 +15,12 @@
     </p>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-button>DETAILS</button>
-    <button mat-button matBadge="{{badgeCount}}" matBadgeColor="warn" (click)="addBadgeCount()">GIVE AWESOMENESS!<mat-icon>favorite</mat-icon></button>
+    <button mat-button (click)="openDialog()">Invite!</button>
+    <li class="invite" *ngIf="taco">
+        You invited to:Taco Tuesday!
+      </li>
+    <button mat-button matBadge="{{badgeCount}}" matBadgeColor="warn" (click)="addBadgeCount()"(click)="openSnackBar()">GIVE AWESOMENESS!<mat-icon>favorite</mat-icon></button>
   </mat-card-actions>
 </mat-card>
+<app-worker-detail></app-worker-detail>
+

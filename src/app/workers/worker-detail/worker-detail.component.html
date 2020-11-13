@@ -1,2 +1,6 @@
-<!-- <h1>Name: {{name}} </h1>
-<img src="{{imgSrc}}" alt="{{name}}" /> -->
+<div *ngIf="worker">
+
+    <h2>{{worker.name | uppercase}} Details</h2>
+    <div><span>id: </span>{{worker.id}}</div>
+  
+  </div>

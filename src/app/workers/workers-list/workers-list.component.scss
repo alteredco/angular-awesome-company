@@ -3,6 +3,7 @@
 h1 {
     @include basic-styles;
     @include display-flex;
+    @include leftSlide;
     font-size: $medium;
     font-family: $awesome-font;
     margin-bottom: 1em;
@@ -10,17 +11,16 @@ h1 {
 
 h3 {
     @include display-flex;
+    @include leftSlide;
+    line-height: normal;
     font-size: $small;
     font-family: $awesome-font;
     margin-bottom: 5em;
 }
 
-.worker-list-div{
-    background-color:purple;
-}
-
 .cards {
-  margin: 5em;
+  @include display-grid-mob;
+  @include rightSlide;
 }
 
 @include tablet {

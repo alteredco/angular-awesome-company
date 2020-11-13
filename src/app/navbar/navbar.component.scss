@@ -2,21 +2,41 @@
 
 .nav-bar {
   -webkit-box-shadow: 6px 8px 15px 5px rgba(255, 95, 208, 0),
-    -2px 18px 15px -5px rgba(255, 95, 208, 0.56);
+    -2px 18px 15px -5px rgba(255, 95, 208, 0.36);
   box-shadow: 6px 8px 15px 5px rgba(255, 95, 208, 0),
-    -2px 18px 15px -5px rgba(255, 95, 208, 0.56);
-}
-
-.title-bar span {
-    color: red;
+    -2px 18px 15px -5px rgba(255, 95, 208, 0.36);
 }
 
 span {
   color: primary;
   padding: $medium;
   font-family: $awesome-font;
+  @include grow(1.1);
+}
+
+.icon{
+    @include grow(1.1);
 }
 
 .spacer {
   flex: 1 1 auto;
+}
+
+.nav-links a{
+    @include grow(1.1);
+}
+
+.menu-title {
+    background-color: $secondary-color;
+    font-family: $awesome-font;
+}
+
+.menu-items{
+    @include display-flex;
+    @include grow(1.1);
+}
+
+.menu-items:hover{
+    background-color:$primary-bg;
+    color:$primary-text;
 }

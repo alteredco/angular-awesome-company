@@ -1,32 +1,30 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Observable} from 'rxjs';
+import { Observable } from 'rxjs';
 import { WorkerService } from '../worker.service';
 import { Worker } from '../worker';
 
 @Component({
   selector: 'app-worker-detail',
   templateUrl: './worker-detail.component.html',
-  styleUrls: ['./worker-detail.component.scss']
+  styleUrls: ['./worker-detail.component.scss'],
 })
 export class WorkerDetailComponent implements OnInit {
-
   @Input()
   result$: Observable<Worker>;
 
-  workerDetails: Worker[];
-  results: string[] = ['Results']
+  @Input() worker: Worker;
 
-  name= "Marine Gauthier"
-  imgSrc= "https://randomuser.me/api/portraits/lego/9.jpg"
-
-
-
-  constructor(private workerService: WorkerService) { 
-    this.result$ = workerService.getWorkerData();
+  constructor(private workerService: WorkerService) {
+    this.result$ = this.workerService.getWorkerData();
   }
 
-  ngOnInit(){
+  ngOnInit() {
     this.workerService.getWorkerData();
-    console.log(Worker[0]);
+    // console.log(`finding worker... ${this.workerDetails.results[0].name[0].first}`);
+    //   console.log(this.newWorker);
   }
+
+  //   showWorker(){
+  //     return this.workerService.getWorkerData().subscribe((data: Worker)=> this.workerDetails = {...data});
+  //   }
 }

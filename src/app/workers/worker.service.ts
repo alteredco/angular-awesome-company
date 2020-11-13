@@ -18,5 +18,6 @@ export class WorkerService {
       // we are calling .get() method over this.http object
       // this .get() method takes URL to call API
       return this.httpClient.get<Worker>(this.URL);
-  }
+    }
+
 }

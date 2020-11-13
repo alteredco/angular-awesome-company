@@ -1,5 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import{WorkerDetailComponent} from '../worker-detail/worker-detail.component'
+import {DialogContentDialogComponent} from '../../dialog-content-dialog/dialog-content-dialog.component'
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-worker-card',
@@ -14,9 +17,13 @@ export class WorkerCardComponent implements OnInit {
   name= "Marine Gauthier"
   imgSrc= "https://randomuser.me/api/portraits/lego/9.jpg"
 
-  public badgeCount: number;
+  taco: string;
+  private isButtonVisible = true;
 
-  constructor() { 
+  public badgeCount: number;
+  durationInSeconds = 500;
+
+  constructor(private _snackBar: MatSnackBar, private dialog: MatDialog) { 
     this.badgeCount = 0;
   }
 
@@ -25,7 +32,26 @@ export class WorkerCardComponent implements OnInit {
     this.badgeCount+=1;
   }
 
+  openSnackBar(){
+    this._snackBar.open("It's Awesome!", "", {
+      duration: this.durationInSeconds,
+    });
+  }
+
+  openDialog() {
+    const dialogRef = this.dialog.open(DialogContentDialogComponent, {
+      data: {taco: this.taco}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+      this.taco = result;
+      this.isButtonVisible=false;
+    });
+  }
+
   ngOnInit(){
+  
   }
 
 }
